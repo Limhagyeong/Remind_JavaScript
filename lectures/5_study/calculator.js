@@ -15,15 +15,30 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (e.target.classList.contains('clear')) {
       output.value = '';
     } else if (e.target.classList.contains('result')) {
-      const res = eval(output.value);
       try {
+        // 계산 전 입력 유효성 검사
+        if (!isValidExpression(output.value)) {
+          throw new Error('입력 오류');
+        }
+        // 계산
+        const res = eval(output.value);
+        // 0으로 나눴을 때
         output.value =
           res === Infinity || res === -Infinity
             ? '0으로 나눌 수 없습니다'
             : res;
       } catch (error) {
-        output.value = '';
+        output.value =
+          error.message === '계산 오류' ? '계산 오류' : '입력 오류';
       }
     }
   });
+
+  function isValidExpression(expression) {
+    // 연산자의 연속성을 체크
+    // 숫자, +, -, *, /, ., 괄호
+    return (
+      /^[0-9+\-*/().]+$/.test(expression) && !/[\+\-*/]{2,}/.test(expression)
+    );
+  }
 });
