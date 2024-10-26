@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log(300),console.log(t);var t=30;console.log(t);const e=t,o=document.querySelector("#button-a"),n=document.querySelector("#button-b"),c=document.querySelector("#display");o.addEventListener("click",(function(){c.textContent=300})),n.addEventListener("click",(function(){c.textContent=e}))})();

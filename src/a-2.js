@@ -1,3 +1,3 @@
-var number = 10;
+let number = 200;
 
 export default number;

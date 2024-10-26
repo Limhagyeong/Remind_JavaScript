@@ -11,19 +11,35 @@
          <script src="./b.js"></script>
     -->
     <!-- 위와 같은 문제 해결을 위해 등장한것이 모듈
-         1. 모듈은 독립적인 스코프를 가짐 => 전역 스코프의 영향을 받지 않음
+         1. 모듈은 독립적인 스코프를 가짐 => 전역 스코프의 영향을 주지 않음
          2. 재사용, 유지보수 용이
-    -->
+
+         단점 : 모듈이 많아지면 각 모듈을 로드하기 위해 브라우저가 더 많은 HTTP 요청을 해야 하므로 초기 로딩 속도가 느려질 수 있음
+         보완 : 번들링 
+         -->
     <!-- <script type="module">
       import a_number from './lectures/4_module-system/a.js';
       import b_number from './lectures/4_module-system/b.js';
       console.log('a.number:' + a_number);
       console.log('b.number:' + b_number);
     </script> -->
-    <script
-      type="module"
-      src="./lectures/4_module-system/index-commonjs.js"
-    ></script>
+
+    <!-- <script type="module" src="./lectures/4_module-system/index.js"></script> -->
+
+    <!-- <script type="module">
+      import './src/a.js';
+      import './src/b.js';
+    </script> -->
+
+    <!-- 번들링 전 : 139ms -->
+    <!-- <script type="module" src="./src/index.js"></script> -->
+
+    <!-- 번들링 후 : 81ms -->
+    <script type="module" src="./dist/main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <button type="button" id="button-a">a_number</button>
+    <button type="button" id="button-b">b_number</button>
+    <div id="display"></div>
+  </body>
 </html>
