@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- js파일이 분리되어있더라도 브라우저에서 동작 시 하나의 파일인것처럼 동작함
+         동일한 변수명이 있다면 값이 덮어씌어지는 등 의도치 않은 값이 출력될 수 있음
+         => 전역스코프를 공유하게 됨
+         <script src="./a.js"></script>
+         <script src="./b.js"></script>
+    -->
+    <!-- 위와 같은 문제 해결을 위해 등장한것이 모듈
+         1. 모듈은 독립적인 스코프를 가짐 => 전역 스코프의 영향을 받지 않음
+         2. 재사용, 유지보수 용이
+    -->
+    <!-- <script type="module">
+      import a_number from './lectures/4_module-system/a.js';
+      import b_number from './lectures/4_module-system/b.js';
+      console.log('a.number:' + a_number);
+      console.log('b.number:' + b_number);
+    </script> -->
+    <script
+      type="module"
+      src="./lectures/4_module-system/index-commonjs.js"
+    ></script>
+  </head>
+  <body></body>
+</html>
