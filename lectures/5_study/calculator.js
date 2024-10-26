@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (
       e.target.classList.contains('num') ||
+      e.target.classList.contains('dot') ||
       (e.target.classList.contains('operator') &&
         !e.target.classList.contains('result'))
     ) {
