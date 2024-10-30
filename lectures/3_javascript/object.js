@@ -130,14 +130,14 @@ function createPerson(name, age, hobby) {
 //   this.hobby = hobby;
 // }
 
-// ES6 클래스 생성
-class Person {
-  constructor(name, age, hobby) {
-    this.name = name;
-    this.age = age;
-    this.hobby = hobby;
-  }
-}
+// // ES6 클래스 생성
+// class Person {
+//   constructor(name, age, hobby) {
+//     this.name = name;
+//     this.age = age;
+//     this.hobby = hobby;
+//   }
+// }
 
-const person1 = new Person('임하경', 1, 'ㅇㅇㅇ');
-console.log(person1);
+// const person1 = new Person('임하경', 1, 'ㅇㅇㅇ');
+// console.log(person1);
