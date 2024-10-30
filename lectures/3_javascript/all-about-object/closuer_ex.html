@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function getNumber() {
+        var num = 5;
+        function innerGetNum() {
+          return num;
+        }
+        return innerGetNum; // 해당 함수의 실행 여부 제어 가능
+      }
+
+      const runner = getNumber(); // getNumber함수(상위함수)의 excution context는 끝난 상태 (변수에 반환값 할당)
+      console.log(runner);
+      console.log(runner()); // inner함수(하위함수)가 동작
+    </script>
+  </head>
+  <body></body>
+</html>
