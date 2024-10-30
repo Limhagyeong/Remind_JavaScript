@@ -95,14 +95,77 @@
 // console.log(hello);
 
 // 콜백함수
-let fruits = ['사과', '귤', '수박'];
+// let fruits = ['사과', '귤', '수박'];
 
-fruits.forEach((item, index) => {
-  console.log(index, item);
-});
+// fruits.forEach((item, index) => {
+//   console.log(index, item);
+// });
 
 // const printItem = function (item, index) {
 //   console.log(index, item);
 // };
 
 // fruits.forEach(printItem);
+
+// 새로운 배열을 만드는 함수
+//   concat() => 깊은 복사 후 push
+//   slice() => 깊은 복사 후 지정 범위 요소 잘라옴
+
+let source = ['사과', '바나나', '딸기', '멜론'];
+// let newSource = source.concat('멜론');
+// let newSource = source.slice(0, 2);
+// // let newSource = source.splice(0, 2);
+// console.log(source);
+// console.log(newSource);
+
+// join() => ,(default값) 기준으로 요소 잘라서 반환 (String)
+// console.log(typeof source.join());
+// console.log(source.join());
+// console.log(source.join('/'));
+// console.log(source.join(', '));
+
+// // sort()=> 오름차순
+// console.log(source.sort());
+// // reverse() => 내림차순
+// console.log(source.reverse());
+// let num = [1, 9, 7, 8, 5, 3];
+// console.log(num);
+
+/*sort(): a, b를 비교했을 때
+  1) a를 b보다 나중에 정렬하려면 (뒤에 두려면) 0보다 큰 숫자를 반환
+  2) a를 b보다 먼저에 정렬하려면 (앞에 두려면) 0보다 작은 숫자를 반환
+  3) 기존 순서를 유지하려면 0을 반환
+*/
+
+// num.sort((a, b) => {
+//   return a > b ? 1 : -1;
+// }); //=> 오름차순
+
+// num.sort((a, b) => {
+//   return a > b ? -1 : 1;
+// }); //=> 내림차순
+
+// console.log(num);
+
+// map()
+// console.log(
+//   source.map((fruit, index) => {
+//     console.log(index, fruit);
+//     return fruit;
+//   })
+// );
+
+// filter() => 조건에대해 true인 모든 값을 새로운 배열로 반환
+let num = [1, 9, 7, 8, 5, 3, 4];
+// console.log(num.filter((x) => x % 2 === 0));
+
+// // find() => 조건에대해 true인 첫번째 값을 반환
+// console.log(num.find((x) => x % 2 === 0));
+
+// // findIndex() => 조건에대해 true인 첫번째 값의 인덱스 반환
+// console.log(num.findIndex((x) => x % 2 === 0));
+
+// reduce()
+//=> 첫번째 매개변수는 누적값 (p), 두번째 매개변수는 현재 요소(n)
+//=> 초기값은 0으로 설정
+console.log(num.reduce((p, n) => p + n, 0));
